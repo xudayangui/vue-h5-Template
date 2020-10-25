@@ -3,5 +3,4 @@ const api = {
     UserInfo: '/user/userinfo',
     UserName: '/user/name'
 }
-
 export default api
