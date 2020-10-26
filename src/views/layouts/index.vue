@@ -36,7 +36,7 @@ export default {
           icon: 'point-gift'
         },
         {
-          title: '精彩活动',
+          title: '活动',
           to: {
             name: 'Exciting'
           },

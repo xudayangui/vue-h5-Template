@@ -28,7 +28,7 @@ export const constantRouterMap = [
         path: '/exciting',
         name: 'Exciting',
         component: () => import('@/views/home/exciting'),
-        meta: { title: '精彩活动', keepAlive: false }
+        meta: { title: '活动', keepAlive: false }
       },
       {
         path: '/find',
