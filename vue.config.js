@@ -54,7 +54,7 @@ module.exports = {
 		},
 		proxy: {
 			'/api': {
-				target: 'https://test.xxx.com',
+				target: 'https://www-48438.com',
 				// ws:true,
 				changOrigin: true,
 				pathRewrite: {

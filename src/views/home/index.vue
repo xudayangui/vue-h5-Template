@@ -1,20 +1,28 @@
 <!-- home -->
 <template>
-  <div class="index-container">
-    <div class="warpper">
-        <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-           <van-swipe-item v-for="(image, index) in images" :key="index">
-                <img v-lazy="image" />
-            </van-swipe-item>
-        </van-swipe>
-    </div>
-  </div>
+	<div class="index-container">
+		<div class="warpper">
+			<van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+				<van-swipe-item v-for="(image, index) in images" :key="index">
+					<img :src="image" />
+				</van-swipe-item>
+			</van-swipe>
+		</div>
+		<div class="warpper">
+			<van-notice-bar background="#fff" color="black" left-icon="volume-o" text="在代码阅读过程中人们说脏话的频率是衡量代码质量的唯一标准。"/>
+		</div>
+	</div>
 </template>
 <script>
 export default {
   data() {
     return {
-      images: []
+      images: [
+		require('./../../assets/images/banner.png'),
+		require('./../../assets/images/banner1.png'),
+		require('./../../assets/images/banner2.png'),
+		require('./../../assets/images/banner3.png')
+      ]
     }
   },
   computed: {},
@@ -23,37 +31,25 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-  .my-swipe .van-swipe-item {
-    color: #fff;
-    font-size: 20px;
-    line-height: 200px;
-    text-align: center;
-    background-color: #39a9ed;
-}
 .index-container {
-  .warpper {
-    background: #fff;
-    .demo-home__title {
-      margin: 0 0 6px;
-      font-size: 32px;
-      .demo-home__title img,
-      .demo-home__title span {
-        display: inline-block;
-        vertical-align: middle;
-      }
-      img {
-        width: 32px;
-      }
-      span {
-        margin-left: 16px;
-        font-weight: 500;
-      }
-    }
-    .demo-home__desc {
-      margin: 0 0 20px;
-      color: rgba(69, 90, 100, 0.6);
-      font-size: 14px;
-    }
-  }
+	width: 100%;
+	height: 100%;
+}
+.warpper {
+		width: 100%;
+	}
+.my-swipe {
+	margin: 5px;
+	border-radius: 5px;
+}
+.my-swipe .van-swipe-item {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+  width: 100%;
+}
+.my-swipe .van-swipe-item img{
+ width: 100%;
+ height: 100%;
 }
 </style>

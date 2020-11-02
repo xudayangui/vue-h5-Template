@@ -1,18 +1,18 @@
 <template>
-  <div class="app-container">
-    <div class="layout-header">
-      <van-nav-bar :fixed="true" title="标题" />
-    </div>
-    <div class="layout-content">
-      <keep-alive v-if="$route.meta.keepAlive">
-        <router-view></router-view>
-      </keep-alive>
-      <router-view v-else></router-view>
-    </div>
-    <div class="layout-footer">
-      <TabBar :data="tabbars" @change="handleChange" />
-    </div>
-  </div>
+	<div class="app-container">
+		<div class="layout-header">
+			<van-nav-bar :fixed="true" :placeholder="true" :title="$route.meta.title" />
+		</div>
+		<div class="layout-content">
+			<keep-alive v-if="$route.meta.keepAlive">
+				<router-view></router-view>
+			</keep-alive>
+			<router-view v-else></router-view>
+		</div>
+		<div class="layout-footer">
+			<TabBar :data="tabbars" @change="handleChange" />
+		</div>
+	</div>
 </template>
 <script>
 import TabBar from '@/components/TabBar'
@@ -64,8 +64,8 @@ export default {
   },
   methods: {
     handleChange(v) {
-      console.log('tab value:', v)
-    }
+		console.error(this.$route)
+	}
   }
 }
 </script>
