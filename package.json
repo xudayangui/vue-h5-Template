@@ -4,7 +4,7 @@
   "description": "A vue h5 template with Vant UI",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve --open",
+    "dev": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
     "stage": "vue-cli-service build --mode staging",
     "lint": "eslint --fix --ext .js,.vue src"
