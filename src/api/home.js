@@ -1,12 +1,14 @@
-import api from './index'
+import qs from 'qs'
 // axios
 import request from '@/utils/request'
+// user api
 
-// 轮播图
-export function login(data) {
+// 用户信息
+export function getUserInfo(params) {
   return request({
-    url: api.Login,
+    url: '/user/userinfo',
     method: 'post',
-    data
+    data: qs.stringify(params),
+    hideloading: true // 隐藏 loading 组件
   })
 }

@@ -1,7 +1,7 @@
 <template>
   <div class="app-container">
     <div class="layout-header">
-        <van-nav-bar :fixed="true" title="标题" />
+      <van-nav-bar :fixed="true" title="标题" />
     </div>
     <div class="layout-content">
       <keep-alive v-if="$route.meta.keepAlive">
