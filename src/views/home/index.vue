@@ -10,15 +10,11 @@
     </div>
   </div>
 </template>
-
 <script>
 export default {
   data() {
     return {
-      images: [
-        'https://img.yzcdn.cn/vant/apple-1.jpg',
-        'https://img.yzcdn.cn/vant/apple-2.jpg',
-      ]
+      images: []
     }
   },
   computed: {},
