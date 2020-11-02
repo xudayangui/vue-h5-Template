@@ -8,16 +8,6 @@ module.exports = {
 		parser: 'babel-eslint'
 	},
 	rules: {
-		'vue/max-attributes-per-line': [
-			2,
-			{
-				singleline: 10,
-				multiline: {
-					max: 1,
-					allowFirstLine: false
-				}
-			}
-		],
 		'vue/singleline-html-element-content-newline': 'off',
 		'vue/multiline-html-element-content-newline': 'off',
 		'vue/name-property-casing': ['error', 'PascalCase'],
@@ -66,13 +56,7 @@ module.exports = {
 			}
 		],
 		'handle-callback-err': [2, '^(err|error)$'],
-		indent: [
-			2,
-			2,
-			{
-				SwitchCase: 1
-			}
-		],
+		indent: "off",
 		'jsx-quotes': [2, 'prefer-single'],
 		'key-spacing': [
 			2,

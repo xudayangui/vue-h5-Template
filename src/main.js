@@ -6,6 +6,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import '@/permission' // 路由权限
 import { NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload } from 'vant'
 // 设置 js中可以访问 $cdn
 import { $cdn } from '@/config'
@@ -26,13 +27,13 @@ Vue.use(TabbarItem)
 Vue.use(Swipe)
 Vue.use(SwipeItem)
 Vue.use(Lazyload, {
-  lazyComponent: true
+	lazyComponent: true
 })
 Vue.config.productionTip = false
 
 new Vue({
-  el: '#app',
-  router,
-  store,
-  render: h => h(App)
+	el: '#app',
+	router,
+	store,
+	render: h => h(App)
 })
