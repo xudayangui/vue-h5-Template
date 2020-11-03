@@ -1,92 +1,77 @@
 <!-- home -->
 <template>
 	<div class="about-container">
-		<div class="warpper"></div>
+		<div class="warpper">
+            <!-- :label="'第'+item.gameNumber+'期'" -->
+            <van-cell is-link v-for="(item,index) in drawList" :key="index" :icon="item.imgPath" size="large">
+                <template #title >
+                    <span class="custom-title" >{{item.gameName}}</span>
+                </template>
+                <template #label >
+                    <div class="custom-label" >{{'第'+item.gameNumber+'期'}}</div>
+                    <div class="custom-label" >
+                        <span class="k3" v-for="(number,key) in item.gameOpenNo" :key="key">{{number}}</span>
+                    </div>
+                </template>
+            </van-cell>
+        </div>
 	</div>
 </template>
 
 <script>
 // 请求接口
-import { getUserInfo } from '@/api/user.js'
-import { mapGetters } from 'vuex'
+// eslint-disable-next-line no-unused-vars
+import { getGameLatestOpenNos } from '@/api/lottrey.js'
 export default {
   data() {
-    return {}
+    return {
+        drawList: []
+    }
   },
-  computed: {
-    ...mapGetters(['userName'])
+  created() {
+      this.getGameLatestOpenNosHttp()
   },
-  mounted() {
-    this.initData()
-  },
+  mounted() {},
   methods: {
 		// 请求数据案例
-		initData() {
+		getGameLatestOpenNosHttp() {
 			// 请求接口数据，仅作为展示，需要配置src->config下环境文件
-			const params = { user: 'sunnie' }
-			getUserInfo(params).then(() => {
-			}).catch(() => {
+			const params = { showCase: true }
+			getGameLatestOpenNos(params).then((data) => {
+                this.drawList = data.list
+                this.drawList.forEach(item => {
+                    // eslint-disable-next-line no-return-assign
+                    return item.gameOpenNo = item.gameOpenNo.split(',')
+                })
+			}).catch((e) => {
 			})
-		},
-		// Action 通过 store.dispatch 方法触发
-		doDispatch() {
-			this.$store.dispatch('setUserName', '真乖，赶紧关注公众号，组织都在等你~')
-		},
-		goGithub(index) {
-			window.location.href = 'https://github.com/sunniejs/vue-h5-Template'
 		}
 	}
 }
+// ?showCase=true
 </script>
 <style lang="scss">
 	.about-container {
-		/* 你的命名空间 */
-		background: #fff;
-		height: 100vh;
-		box-sizing: border-box;
 		.warpper {
-			padding: 50px 12px 12px 12px;
-			.list {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				color: #666;
-				font-size: 14px;
-				.demo-home__title {
-					margin: 0 0 6px;
-					font-size: 32px;
-					.demo-home__title img,
-					.demo-home__title span {
-					display: inline-block;
-					vertical-align: middle;
-					}
-				}
-				.item {
-					font-size: 14px;
-					line-height: 34px;
-					a {
-					text-decoration: underline;
-					}
-					.van-button {
-					/* vant-ui 元素*/
-					background: #ff5500;
-					}
-				}
+            width: 100%;
+            .van-cell {
+                .van-cell__left-icon{
+                    font-size: 0.9rem;
+                    margin-right:0.2rem;
+                }
 
-				.logo {
-					width: 120px;
-					height: 120px;
-					background: url($cdn + '/weapp/logo.png') center / contain no-repeat;
-				}
-				.wechat {
-					width: 200px;
-					height: 200px;
-					img {
-					width: 100%;
-					height: auto;
-					}
-				}
-			}
+            }
 		}
-	}
+    }
+    .k3 {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        margin-left: 5px;
+        background-color: red;
+        color: #fff;
+        text-align: center;
+        line-height: 20px;
+        border-radius: 50%;
+    }
 </style>

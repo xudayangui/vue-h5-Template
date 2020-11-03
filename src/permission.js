@@ -4,11 +4,11 @@ import { getToken } from '@/utils/auth' // get token from session
 const whiteList = ['/login', '/home', '/draw', '/exciting', '/find', '/registered'] // no redirect whitelist
 
 router.beforeEach(async(to, from, next) => {
-	// 改变title
-	/* 路由发生变化修改页面title */
-	if (to.meta.title) {
-		document.title = to.meta.title
-	}
+	// // 改变title
+	// /* 路由发生变化修改页面title */
+	// if (to.meta.title) {
+	// 	document.title = to.meta.title
+	// }
 	// 获取token
 	const hasToken = getToken()
 	if (hasToken) {
