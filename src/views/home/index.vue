@@ -34,12 +34,6 @@ import { getGameTypeAll, getNotice, getBannerConfig } from '@/api/lottrey.js'
 export default {
 	data() {
 		return {
-			images: [
-				require('./../../assets/images/banner.png'),
-				require('./../../assets/images/banner1.png'),
-				require('./../../assets/images/banner2.png'),
-				require('./../../assets/images/banner3.png')
-			],
 			gridList: [
 				{ 'img': '', 'icon': 'shopping-cart', 'text': '彩票' },
 				{ 'img': '', 'icon': 'gem', 'text': '棋牌' },
@@ -76,7 +70,7 @@ export default {
                 localStorage.setItem('newList', JSON.stringify(newList))
 			}).catch((e) => {
                 // eslint-disable-next-line no-undef
-                Notify({ type: 'danger', message: e })
+                this.$notify({ type: 'danger', message: e })
 			})
         },
         // 获取公告
@@ -85,7 +79,7 @@ export default {
                 this.notice = data.list[0].noticeContent
 			}).catch((e) => {
                 // eslint-disable-next-line no-undef
-                Notify({ type: 'danger', message: e })
+                this.$notify({ type: 'danger', message: e })
 			})
         },
         // 获取banner
@@ -95,7 +89,7 @@ export default {
                 this.bannerList = data.list.filter(item => item.imgType == '010406')
 			}).catch((e) => {
                 // eslint-disable-next-line no-undef
-                Notify({ type: 'danger', message: e })
+                this.$notify({ type: 'danger', message: e })
 			})
         }
     }

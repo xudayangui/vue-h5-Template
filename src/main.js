@@ -7,7 +7,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import '@/permission' // 路由权限
-import { NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload } from 'vant'
+import { NavBar, Tabbar, TabbarItem, Swipe, SwipeItem, Lazyload, Notify, Image as VanImage } from 'vant'
 // 设置 js中可以访问 $cdn
 import { $cdn } from '@/config'
 Vue.prototype.$cdn = $cdn
@@ -26,6 +26,8 @@ Vue.use(Tabbar)
 Vue.use(TabbarItem)
 Vue.use(Swipe)
 Vue.use(SwipeItem)
+Vue.use(Notify)
+Vue.use(VanImage)
 Vue.use(Lazyload, {
 	lazyComponent: true
 })

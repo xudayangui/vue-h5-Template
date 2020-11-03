@@ -5,6 +5,7 @@ const api = {
   getGameTypeAll: '/getGameTypeAll',
   getGameLatestOpenNos: '/gameOpenNo/getGameLatestOpenNos',
   getNotice: '/getNotice',
-  getBannerConfig: '/getBannerConfig'
+  getBannerConfig: '/getBannerConfig',
+  getWebActivity: '/webactivity/getWebActivity?f=1'
 }
 export default api

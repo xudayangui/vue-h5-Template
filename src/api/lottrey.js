@@ -37,3 +37,13 @@ export function getBannerConfig(data) {
         hideloading: true // 隐藏 loading 组件
     })
 }
+// 活动
+// ?f=1
+export function getWebActivity(data) {
+    return request({
+        url: api.getWebActivity,
+        method: 'get',
+        data,
+        hideloading: true // 隐藏 loading 组件
+    })
+}

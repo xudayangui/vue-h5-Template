@@ -1,92 +1,62 @@
 <!-- home -->
 <template>
 	<div class="about-container">
-		<div class="warpper"></div>
+		<div class="warpper">
+            <van-grid :column-num="1">
+                <van-grid-item v-for="(item,index) in excitList" :key="index">
+                    <span>{{item.activityDesc}}</span>
+                    <van-image :src="item.activitySrc" />
+                </van-grid-item>
+            </van-grid>
+        </div>
 	</div>
 </template>
 
 <script>
 // 请求接口
-import { getUserInfo } from '@/api/user.js'
-import { mapGetters } from 'vuex'
+import { getWebActivity } from '@/api/lottrey.js'
 export default {
-  data() {
-    return {}
-  },
-  computed: {
-    ...mapGetters(['userName'])
-  },
-  mounted() {
-    this.initData()
-  },
-  methods: {
-		// 请求数据案例
-		initData() {
-			// 请求接口数据，仅作为展示，需要配置src->config下环境文件
-			const params = { user: 'sunnie' }
-			getUserInfo(params).then(() => {
-			}).catch(() => {
+    data() {
+        return {
+            excitList: []
+        }
+    },
+    created() {
+      this.getWebActivityHttp()
+    },
+    mounted() {
+    },
+    methods: {
+		// 获取活动详情
+		getWebActivityHttp() {
+			// const params = { f: '1' }
+			getWebActivity({ f: '1' }).then((data) => {
+                this.excitList = data.list
+			}).catch((e) => {
+                // eslint-disable-next-line no-undef
+                this.$notify({ type: 'danger', message: e })
 			})
-		},
-		// Action 通过 store.dispatch 方法触发
-		doDispatch() {
-			this.$store.dispatch('setUserName', '真乖，赶紧关注公众号，组织都在等你~')
-		},
-		goGithub(index) {
-			window.location.href = 'https://github.com/sunniejs/vue-h5-Template'
 		}
 	}
 }
 </script>
 <style lang="scss">
 	.about-container {
-		/* 你的命名空间 */
-		background: #fff;
-		height: 100vh;
 		box-sizing: border-box;
 		.warpper {
-			padding: 50px 12px 12px 12px;
-			.list {
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				color: #666;
-				font-size: 14px;
-				.demo-home__title {
-					margin: 0 0 6px;
-					font-size: 32px;
-					.demo-home__title img,
-					.demo-home__title span {
-					display: inline-block;
-					vertical-align: middle;
-					}
-				}
-				.item {
-					font-size: 14px;
-					line-height: 34px;
-					a {
-					text-decoration: underline;
-					}
-					.van-button {
-					/* vant-ui 元素*/
-					background: #ff5500;
-					}
-				}
-
-				.logo {
-					width: 120px;
-					height: 120px;
-					background: url($cdn + '/weapp/logo.png') center / contain no-repeat;
-				}
-				.wechat {
-					width: 200px;
-					height: 200px;
-					img {
-					width: 100%;
-					height: auto;
-					}
-				}
-			}
+            .van-grid-item {
+                margin: 5px;
+                background-color: #fff
+            }
 		}
-	}
+    }
+    .van-grid-item__content {
+        padding-top:0px;
+        box-shadow: 0 0 0.5rem 0 rgba(0,0,0,.43);
+        border-radius:5px ;
+        height: 150px;
+    }
+    .van-image {
+        height: 120px
+    }
 </style>
