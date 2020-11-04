@@ -17,18 +17,25 @@
 		<van-form>
             <van-field  type="text" v-model="userName" name="账号" label="账号"  placeholder="账号为6-12位数字或英文字母" clearable
 			:rules="[{ required: true, message: '请输入账号' },{pattern:/^[1][3,5,6,7,8,9][0-9]{9}$/ , message: '请输入正确账号'}]"/>
+
 			<van-field type="password" v-model="passWord"  name="密码" label="密码"  placeholder="密码为6-12位数字或英文字母" clearable
 			:rules="[{ required: true, message: '请输入密码' },{pattern: /^\w{6,}$/,message:'密码为6-12位数字或英文字母'}]"></van-field>
+
             <van-field type="password" v-model="passWord"  name="请输入确认密码" label="确认密码"  placeholder="密码" clearable
 			:rules="[{ required: true, message: '请输入确认密码' },{pattern: /^\w{6,}$/,message:'密码为6-12位数字或英文字母'}]"></van-field>
+
             <van-field  type="text" v-model="userName" name="姓名" label="姓名"  placeholder="真实姓名" clearable
 			:rules="[{ required: true, message: '请输入姓名' }]"/>
+
             <van-field  type="tel" v-model="userName" name="手机号" label="手机号"  placeholder="手机号为11位数字" clearable
 			:rules="[{ required: true, message: '请输入手机号' }]"/>
+
             <van-field  type="digit" v-model="userName" name="邀请码" label="邀请码"  placeholder="邀请码4位数字" clearable
 			:rules="[{ required: true, message: '请输入邀请码' }]"/>
+
             <van-field type="digit" v-model="verifyCode"  name="验证码" label="请输入验证码"  placeholder="验证码"
             :rules="[{ required: true, message: '请输入确认密码' }]"></van-field>
+
 			<div style="margin: 16px;">
 				<van-button @click="onSubmit" color="#dc3b40" round block type="info" native-type="submit"> 立即注册</van-button>
 			</div>

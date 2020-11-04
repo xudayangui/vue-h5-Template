@@ -30,7 +30,7 @@ export default {
 		// 获取活动详情
 		getWebActivityHttp() {
 			// const params = { f: '1' }
-			getWebActivity({ f: '1' }).then((data) => {
+			getWebActivity().then((data) => {
                 this.excitList = data.list
 			}).catch((e) => {
                 // eslint-disable-next-line no-undef
@@ -45,18 +45,18 @@ export default {
 		box-sizing: border-box;
 		.warpper {
             .van-grid-item {
-                margin: 5px;
-                background-color: #fff
+                // margin: 5px;
+                // background-color: #fff
             }
 		}
     }
     .van-grid-item__content {
-        padding-top:0px;
-        box-shadow: 0 0 0.5rem 0 rgba(0,0,0,.43);
-        border-radius:5px ;
-        height: 150px;
+        // padding-top:0px;
+        // box-shadow: 0 0 0.5rem 0 rgba(0,0,0,.43);
+        // border-radius:5px ;
+        // height: 150px;
     }
     .van-image {
-        height: 120px
+        // height: 120px
     }
 </style>

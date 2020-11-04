@@ -9,34 +9,6 @@ const name = defaultSettings.title || 'vue mobile template'
 // 生产环境，测试和正式
 const IS_PROD = ['production', 'prod'].includes(process.env.NODE_ENV)
 
-// externals
-// const externals = {
-//   vue: 'Vue',
-//   'vue-router': 'VueRouter',
-//   vuex: 'Vuex',
-//   vant: 'vant',
-//   axios: 'axios'
-// }
-// CDN外链，会插入到index.html中
-// const cdn = {
-//   // 开发环境
-//   dev: {
-//     css: [],
-//     js: []
-//   },
-//   // 生产环境
-//   build: {
-//     css: ['https://cdn.jsdelivr.net/npm/vant@2.4.7/lib/index.css'],
-//     js: [
-//       'https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.min.js',
-//       'https://cdn.jsdelivr.net/npm/vue-router@3.1.5/dist/vue-router.min.js',
-//       'https://cdn.jsdelivr.net/npm/axios@0.19.2/dist/axios.min.js',
-//       'https://cdn.jsdelivr.net/npm/vuex@3.1.2/dist/vuex.min.js',
-//       'https://cdn.jsdelivr.net/npm/vant@2.4.7/lib/index.min.js'
-//     ]
-//   }
-// }
-
 module.exports = {
 	publicPath: './', // 署应用包时的基本 URL。 vue-router hash 模式使用
 	//  publicPath: '/app/', //署应用包时的基本 URL。  vue-router history模式使用
@@ -71,10 +43,10 @@ module.exports = {
 				// 向全局sass样式传入共享的全局变量, $src可以配置图片cdn前缀
 				// 详情: https://cli.vuejs.org/guide/css.html#passing-options-to-pre-processor-loaders
 				prependData: `
-          @import "assets/css/mixin.scss";
-          @import "assets/css/variables.scss";
-          $cdn: "${defaultSettings.$cdn}";
-          `
+                    @import "assets/css/mixin.scss";
+                    @import "assets/css/variables.scss";
+                    $cdn: "${defaultSettings.$cdn}";
+                `
 			}
 		}
 	},

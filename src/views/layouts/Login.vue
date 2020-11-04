@@ -16,10 +16,14 @@
 		<!-- vant表单 -->
 		<van-form>
             <van-field  type="text" v-model="userName" name="用户名" label="用户名"  placeholder="用户名" clearable
-			:rules="[{ required: true, message: '请填写账号' },{pattern:/^[1][3,5,6,7,8,9][0-9]{9}$/ , message: '请输入正确的11位手机号'}]"/>
+			:rules="[{ required: true, message: '请填写账号' }]"/>
 			<van-field v-model="passWord" type="password" name="密码" label="密码"  placeholder="密码" clearable
 			:rules="[{ required: true, message: '请填写密码' },{pattern: /^\w{6,}$/,message:'密码不少于6位'}]"></van-field>
-			<van-field v-model="verifyCode" type="tel" name="验证码" label="验证码"  placeholder="验证码"></van-field>
+			<van-field v-model="verifyCode" type="tel" name="验证码" label="验证码"  placeholder="验证码">
+                <div slot="button" >
+                    <img :src="catCh"  @click="getVerCode"/>
+                </div>
+            </van-field>
 			<div style="margin: 16px;">
 				<van-button @click="onSubmit" round block type="info" native-type="submit" color="#dc3b40"> 立即登录</van-button>
 			</div>
@@ -27,14 +31,16 @@
 	</div>
 </template>
 <script>
+    import { login } from '@/api/user.js'
 	export default {
 		data() {
 			return {
 				userName: null,
 				passWord: null,
-				verifyCode: null
+                verifyCode: null,
+                catCh: `/getVerCode?w=100&h=35&t=` + Date.now()
 			}
-		},
+        },
 		methods: {
 			clearPassWord(value) {
 				if (value == 'passWord') { //eslint-disable-line
@@ -42,49 +48,25 @@
 				} else {
 					this.userName = null
 				}
-			},
+            },
+            getVerCode() {
+                this.catCh = `/getVerCode?w=100&h=35&t=` + Date.now()
+            },
 			onSubmit() { // 点击登录
-				// 如果不符合登录条件则不会继续执行
-				if (this.userName.trim() == '') {//eslint-disable-line
-					return
-				}
-				if (!this.userName.match(/^[1][3,5,6,7,8,9][0-9]{9}$/)) {
-					return
-				}
-				if (!this.passWord.match(/^\w{6,}$/)) {
-					return
-				}
-				if (!this.verifyCode.trim() == '') {//eslint-disable-line
-					return
-				}
-				// 获取数据
-				let users = localStorage.users
-				if (users) {
-					users = JSON.parse(users)
-					let isLogin = false
-					users.map(item => {
-						if (item.username == this.username && item.password == this.password) {//eslint-disable-line
-							isLogin = true
-							return
-						}
-					})
-
-					if (isLogin) {
-						sessionStorage.user = this.username
-						this.$router.push({
-							path: '/user'
-						})
-					} else {
-						this.$notify({ type: 'danger', message: '输入的账号或密码有误' })
-					}
-				} else {
-					this.$notify({ type: 'danger', message: '该用户不存在' })
-				}
+               const params = {
+                    custName: this.userName,
+                    pwd: this.passWord,
+                    verCode: this.verifyCode
+                }
+                login(params).then((data) => {
+                    console.error(data)
+                }).catch((e) => {
+                    // eslint-disable-next-line no-undef
+                    this.$notify({ type: 'danger', message: e })
+                })
 			},
 			back() { // 返回我的页面
-				this.$router.push({
-					path: '/user'
-				})
+				this.$router.push({ path: '/user' })
 			}
 		}
 

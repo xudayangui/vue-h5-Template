@@ -38,7 +38,6 @@ export function getBannerConfig(data) {
     })
 }
 // 活动
-// ?f=1
 export function getWebActivity(data) {
     return request({
         url: api.getWebActivity,
