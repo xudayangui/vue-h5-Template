@@ -9,9 +9,25 @@ body .app {
 }
 
 .app-container {
-  padding-bottom: 50px;
-    // overflow-y: auto;
+//   margin-bottom: 60px;
+//   display: flex;
+//   flex-direction: column;
+//   height: 100%;
 }
+.layout-header{
+    // z-index: 9999;
+    // position:absolute;  top:0;
+}
+.layout-content {
+    // margin-bottom: 60px;
+    // position:absolute; bottom:60px; top: 60px
+}
+.layout-footer {
+    // z-index: 9999;
+    // height: 60px;
+    // position:absolute;   bottom:0;
+}
+
 .van-nav-bar{
   background-color:#dc3b40;
  }

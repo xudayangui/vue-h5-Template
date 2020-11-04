@@ -2,7 +2,19 @@
 <template>
 	<div class="about-container">
 		<div class="warpper">
-            <van-cell v-for="(item,index) in list" :key="index" :title="'用户名 ：' + item.name" />
+            <van-cell v-for="(item,index) in list" :key="index" >
+                <template #title>
+                    <div class="custom-title">账号 ：{{item.name}}</div>
+                    <div class="custom-title">
+                        盈利 ：<span style="color:red;" >{{item.amt}}</span>
+                    </div>
+                </template>
+                <template #right-icon>
+                    <van-button :color="index>2?'#eee':['red','green','blue'][index]" type="default" round size="small" style="width:40px;height:40px">
+                       <span :style="index>2?'color:#000;':'color:#fff'">{{index+1}}</span>
+                    </van-button>
+                </template>
+            </van-cell>
         </div>
 	</div>
 </template>
