@@ -42,7 +42,14 @@ export function getWebActivity(data) {
     return request({
         url: api.getWebActivity,
         method: 'get',
-        data,
-        hideloading: true // 隐藏 loading 组件
+        data
+    })
+}
+// 排行榜
+export function getBetRank(data) {
+    return request({
+        url: api.getBetRank,
+        method: 'get',
+        data
     })
 }

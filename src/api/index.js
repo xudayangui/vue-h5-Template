@@ -6,6 +6,7 @@ const api = {
   getGameLatestOpenNos: '/gameOpenNo/getGameLatestOpenNos',
   getNotice: '/getNotice',
   getBannerConfig: '/getBannerConfig',
-  getWebActivity: '/webactivity/getWebActivity?f=1'
+  getWebActivity: '/webactivity/getWebActivity?f=1',
+  getBetRank: '/getBetRank'
 }
 export default api
