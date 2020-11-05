@@ -31,7 +31,7 @@ export const constantRouterMap = [
 				path: '/find',
 				name: 'Find',
 				component: () => import('@/views/home/find'),
-				meta: { title: '发现', keepAlive: false }
+				meta: { title: '金榜', keepAlive: false }
 			},
 			{
 				path: '/about',

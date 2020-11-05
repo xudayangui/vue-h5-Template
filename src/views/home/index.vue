@@ -1,31 +1,32 @@
 <!-- home -->
 <template>
 	<div class="index-container">
-		<div class="warpper">
-			<van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
-				<van-swipe-item v-for="(item, index) in bannerList" :key="index">
-					<img v-lazy="item.imgPath"/>
-				</van-swipe-item>
-			</van-swipe>
+        <div class="warpper">
+            <div>
+                <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+                    <van-swipe-item v-for="(item, index) in bannerList" :key="index">
+                        <img v-lazy="item.imgPath"/>
+                    </van-swipe-item>
+                </van-swipe>
+            </div>
+            <div>
+                <van-notice-bar background="#fff" color="black" left-icon="volume-o" :text="notice"/>
+            </div>
+            <!--  @click="getGameTypeAllHttp" -->
+            <div>
+                <van-grid :column-num="6" square clickable>
+                    <van-grid-item v-for="(item,index) in gridList" :key="index" :icon="item.icon" :text="item.text"/>
+                </van-grid>
+            </div>
+            <div>
+                <van-cell title=热门 is-link value="全部" />
+            </div>
+            <div>
+                <van-grid :column-num="4" square clickable :border="false" icon-size="60px">
+                    <van-grid-item v-for="(item,index) in lotteryList" :key="index" :icon="item.imgPath" :text="item.gameName" />
+                </van-grid>
+            </div>
 		</div>
-		<div class="warpper">
-			<van-notice-bar background="#fff" color="black" left-icon="volume-o" :text="notice"/>
-		</div>
-        <!--  @click="getGameTypeAllHttp" -->
-		<div class="warpper">
-			<van-grid :column-num="6" square clickable>
-				<van-grid-item v-for="(item,index) in gridList" :key="index" :icon="item.icon" :text="item.text"/>
-			</van-grid>
-		</div>
-		<div class="warpper">
-			<van-cell title=热门 is-link value="全部" />
-		</div>
-		<div class="warpper">
-			<van-grid :column-num="4" square clickable :border="false" icon-size="60px">
-				<van-grid-item v-for="(item,index) in lotteryList" :key="index" :icon="item.imgPath" :text="item.gameName" />
-			</van-grid>
-		</div>
-		<div class="warpper"></div>
 	</div>
 </template>
 <script>
@@ -65,6 +66,7 @@ export default {
                         newList.push(data.list[i].gameSetting[a])
                     }
                 }
+
                 // eslint-disable-next-line eqeqeq
                 this.lotteryList = newList.filter(item => item.recommend == 1)
                 localStorage.setItem('newList', JSON.stringify(newList))

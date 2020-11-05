@@ -1,7 +1,7 @@
 import router from './router'
 import store from './store'
 import { getToken } from '@/utils/auth' // get token from session
-const whiteList = ['/login', '/home', '/draw', '/exciting', '/find', '/registered'] // no redirect whitelist
+const whiteList = ['/login', '/home', '/draw', '/exciting', '/find', '/registered', '/about'] // no redirect whitelist
 
 router.beforeEach(async(to, from, next) => {
 	// // 改变title

@@ -43,7 +43,7 @@ export default {
                     icon: 'star'
                 },
                 {
-                    title: '发现',
+                    title: '金榜',
                     to: {
                         name: 'Find'
                     },
