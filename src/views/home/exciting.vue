@@ -1,4 +1,4 @@
-<!-- home -->
+<!-- huodong -->
 <template>
 	<div class="exciting-container">
 		<div class="warpper">

@@ -1,7 +1,7 @@
 <template>
 	<div class="app-container">
 		<div class="layout-header">
-			<van-nav-bar :fixed="true" :placeholder="true" :title="$route.meta.title" z-index="9999"/>
+			<van-nav-bar :fixed="true" :title="$route.meta.title" z-index="9999"/>
 		</div>
 		<div class="layout-content">
 			<keep-alive v-if="$route.meta.keepAlive">
@@ -75,4 +75,9 @@ export default {
 }
 </script>
 <style scoped>
+.layout-content {
+    height: 100%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 </style>

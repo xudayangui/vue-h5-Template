@@ -13,15 +13,15 @@
                 <van-notice-bar background="#fff" color="black" left-icon="volume-o" :text="notice"/>
             </div>
             <div>
-                <van-grid :column-num="6" square clickable>
-                    <van-grid-item v-for="(item,index) in gridList" :key="index" :icon="item.icon" :text="item.text"/>
+                <van-grid :column-num="5" square clickable>
+                    <van-grid-item v-for="(item,index) in gridList" :key="index" :icon="item.img" :text="item.text"/>
                 </van-grid>
             </div>
-            <div>
-                <van-cell title=热门 is-link value="全部" />
+            <div >
+                <van-cell title="热门彩票" is-link to="/lottreyAll" value="全部" />
             </div>
             <div>
-                <van-grid :column-num="4" square clickable :border="false" icon-size="60px">
+                <van-grid :column-num="3" square clickable :border="false" icon-size="70px">
                     <van-grid-item v-for="(item,index) in lotteryList" :key="index" :icon="item.imgPath" :text="item.gameName" />
                 </van-grid>
             </div>
@@ -34,14 +34,12 @@ import { getGameTypeAll, getNotice, getBannerConfig } from '@/api/lottrey.js'
 export default {
 	data() {
 		return {
-            // class-prefix="my-icon" name="liebiao" /
 			gridList: [
-				{ 'img': '', 'icon': 'shopping-cart', 'text': '彩票' },
-				{ 'img': '', 'icon': 'gem', 'text': '棋牌' },
-				{ 'img': '', 'icon': 'bag', 'text': '电子' },
-				{ 'img': '', 'icon': 'invition', 'text': '电竞' },
-				{ 'img': '', 'icon': 'column', 'text': '真人' },
-				{ 'img': '', 'icon': 'goods-collect', 'text': '体育' }
+				{ 'img': require('./../../assets/images/qipai.png'), 'text': '棋牌' },
+				{ 'img': require('./../../assets/images/dizi.png'), 'text': '电子' },
+				{ 'img': require('./../../assets/images/dianjing.png'), 'text': '电竞' },
+				{ 'img': require('./../../assets/images/zhenren.png'), 'text': '真人' },
+				{ 'img': require('./../../assets/images/tiyu.png'), 'text': '体育' }
 			],
             lotteryList: [],
             bannerList: [],

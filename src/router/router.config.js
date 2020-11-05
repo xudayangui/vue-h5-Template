@@ -31,14 +31,14 @@ export const constantRouterMap = [
 				path: '/find',
 				name: 'Find',
 				component: () => import('@/views/home/find'),
-				meta: { title: '金榜', keepAlive: false }
+				meta: { title: '发现', keepAlive: false }
 			},
 			{
 				path: '/about',
 				name: 'About',
 				component: () => import('@/views/home/about'),
-				meta: { title: '我', keepAlive: false }
-			}
+				meta: { title: '我的', keepAlive: false }
+            }
 		]
 	},
 	// 登录页面
@@ -51,5 +51,10 @@ export const constantRouterMap = [
 		path: '/registered',
 		name: 'Registered',
 		component: () => import('@/views/layouts/registered')
-	}
+    },
+    {
+        path: '/lottreyAll',
+        name: 'LottreyAll',
+        component: () => import('@/views/lottreyAll/index')
+    }
 ]
