@@ -10,7 +10,8 @@ router.beforeEach(async(to, from, next) => {
 	// 	document.title = to.meta.title
 	// }
 	// 获取token
-	const hasToken = getToken()
+    const hasToken = getToken()
+    console.error(hasToken)
 	if (hasToken) {
 		if (to.path === '/login') {
 			// 如果已登录，请重定向到主页
@@ -22,7 +23,7 @@ router.beforeEach(async(to, from, next) => {
 			} else {
 				try {
 					// 获取用户信息
-					await store.dispatch('user/getInfo')
+					await store.dispatch('setUserName')
 					next()
 				} catch (error) {
 					// 删除令牌并进入登录页面重新登录

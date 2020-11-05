@@ -1,6 +1,6 @@
 <!-- home -->
 <template>
-	<div class="about-container">
+	<div class="find-container">
 		<div class="warpper">
             <van-cell v-for="(item,index) in list" :key="index" size="large" clickable>
                 <template #icon >

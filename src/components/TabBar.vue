@@ -1,8 +1,12 @@
 <template>
 	<div>
-		<van-tabbar fixed route v-model="active" @change="handleChange" z-index="9999" :placeholder="true">
+		<van-tabbar fixed route v-model="active" @change="handleChange" z-index="9999" :placeholder="true" active-color="red" inactive-color="#999" >
 			<van-tabbar-item v-for="(item, index) in data" :to="item.to" :icon="item.icon" :key="index">
-				{{ item.title }}
+                <span>{{ item.title }}</span>
+                <template #icon>
+                    <van-icon v-if="item.font" :class="item.font" class-prefix="my-icon" :name="item.icon"  size="20"/>
+                    <van-icon v-else :name="item.icon" />
+                </template>
 			</van-tabbar-item>
 		</van-tabbar>
 	</div>

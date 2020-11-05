@@ -5,7 +5,7 @@ import request from '@/utils/request'
 // 彩种
 export function getGameTypeAll(data) {
     return request({
-        url: api.getGameTypeAll,
+        url: api.GetGameTypeAll,
         method: 'get',
         data
     })
@@ -13,7 +13,7 @@ export function getGameTypeAll(data) {
 // 开奖信息
 export function getGameLatestOpenNos(data) {
     return request({
-        url: api.getGameLatestOpenNos,
+        url: api.GetGameLatestOpenNos,
         method: 'get',
         data
     })
@@ -22,7 +22,7 @@ export function getGameLatestOpenNos(data) {
 // 活动公告
 export function getNotice(data) {
     return request({
-        url: api.getNotice,
+        url: api.GetNotice,
         method: 'get',
         data,
         hideloading: true // 隐藏 loading 组件
@@ -31,7 +31,7 @@ export function getNotice(data) {
 // banner logo
 export function getBannerConfig(data) {
     return request({
-        url: api.getBannerConfig,
+        url: api.GetBannerConfig,
         method: 'get',
         data,
         hideloading: true // 隐藏 loading 组件
@@ -40,7 +40,7 @@ export function getBannerConfig(data) {
 // 活动
 export function getWebActivity(data) {
     return request({
-        url: api.getWebActivity,
+        url: api.GetWebActivity,
         method: 'get',
         data
     })
@@ -48,7 +48,7 @@ export function getWebActivity(data) {
 // 排行榜
 export function getBetRank(data) {
     return request({
-        url: api.getBetRank,
+        url: api.GetBetRank,
         method: 'get',
         data
     })

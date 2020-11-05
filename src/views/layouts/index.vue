@@ -26,35 +26,40 @@ export default {
                     to: {
                         name: 'Home'
                     },
-                    icon: 'wap-home'
+                    icon: 'shouye',
+                    font: 'iconfont'
                 },
                 {
                     title: '开奖',
                     to: {
                         name: 'Draw'
                     },
-                    icon: 'point-gift'
+                    icon: 'kaijiang',
+                    font: 'iconfont'
                 },
                 {
                     title: '活动',
                     to: {
                         name: 'Exciting'
                     },
-                    icon: 'star'
+                    icon: 'star',
+                    font: ''
                 },
                 {
                     title: '发现',
                     to: {
                         name: 'Find'
                     },
-                    icon: 'browsing-history'
+                    icon: 'faxian',
+                    font: 'iconfont'
                 },
                 {
-                    title: '我',
+                    title: '我的',
                     to: {
                         name: 'About'
                     },
-                    icon: 'manager'
+                    icon: 'wode',
+                    font: 'iconfont'
                 }
             ]
         }

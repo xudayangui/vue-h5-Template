@@ -2,11 +2,11 @@ const api = {
   Login: '/api/login',
   UserInfo: '/user/userinfo',
   UserName: '/user/name',
-  getGameTypeAll: '/getGameTypeAll',
-  getGameLatestOpenNos: '/gameOpenNo/getGameLatestOpenNos',
-  getNotice: '/getNotice',
-  getBannerConfig: '/getBannerConfig',
-  getWebActivity: '/webactivity/getWebActivity?f=1',
-  getBetRank: '/getBetRank'
+  GetGameTypeAll: '/getGameTypeAll',
+  GetGameLatestOpenNos: '/gameOpenNo/getGameLatestOpenNos',
+  GetNotice: '/getNotice',
+  GetBannerConfig: '/getBannerConfig',
+  GetWebActivity: '/webactivity/getWebActivity?f=1',
+  GetBetRank: '/getBetRank'
 }
 export default api

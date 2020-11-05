@@ -1,6 +1,6 @@
 <!-- home -->
 <template>
-	<div class="about-container">
+	<div class="draw-container">
 		<div class="warpper">
             <!-- :label="'第'+item.gameNumber+'期'" -->
             <van-cell v-for="(item,index) in drawList" :key="index"  size="large" clickable>
@@ -57,7 +57,7 @@ export default {
 // ?showCase=true
 </script>
 <style lang="scss">
-	.about-container {
+	.draw-container {
 		.warpper {
             width: 100%;
             .van-cell {

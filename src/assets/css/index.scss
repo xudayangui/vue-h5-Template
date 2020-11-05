@@ -7,7 +7,13 @@ body .app {
   font-family: Arial, Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, sans-serif;
   background-color: $background-color;
 }
-
+.my-icon {
+    // position: relative !important;
+    // font: 0.37333rem/1 "my-icon" !important;
+    // font-size: inherit !important;
+    // text-rendering: auto !important;
+    // -webkit-font-smoothing: antialiased !important;
+  }
 .app-container {
 //   margin-bottom: 60px;
 //   display: flex;

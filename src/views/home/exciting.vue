@@ -1,6 +1,6 @@
 <!-- home -->
 <template>
-	<div class="about-container">
+	<div class="exciting-container">
 		<div class="warpper">
             <van-grid :column-num="1">
                 <van-grid-item v-for="(item,index) in excitList" :key="index">
@@ -41,7 +41,7 @@ export default {
 }
 </script>
 <style lang="scss">
-	.about-container {
+	.exciting-container {
 		box-sizing: border-box;
 		.warpper {
             .van-grid-item {
