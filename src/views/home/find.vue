@@ -2,15 +2,20 @@
 <template>
 	<div class="about-container">
 		<div class="warpper">
-            <van-cell v-for="(item,index) in list" :key="index" >
+            <van-cell v-for="(item,index) in list" :key="index" size="large" clickable>
+                <template #icon >
+                    <van-image style="margin-right:10px;" width="50" height="50" round lazy-load :src="require('./../../assets/images/touxiang.jpg')" />
+                </template>
                 <template #title>
-                    <div class="custom-title">账号 ：{{item.name}}</div>
                     <div class="custom-title">
-                        盈利 ：<span style="color:red;" >{{item.amt}}</span>
+                        <span>账号</span> ：<span style="color:#38f;" >{{item.name}}</span>
+                    </div>
+                    <div class="custom-title">
+                        <span>盈利</span> ：<span style="color:#dc3b40;" >¥{{item.amt}}</span>
                     </div>
                 </template>
                 <template #right-icon>
-                    <van-button :color="index>2?'#eee':['red','green','blue'][index]" type="default" round size="small" style="width:40px;height:40px">
+                    <van-button :color="index>2?'#eee':['#dc3b40','#ffa659','#38f'][index]" type="default" round size="small" style="width:30px;height:30px;margin-top:8px;font-size:16px;">
                        <span :style="index>2?'color:#000;':'color:#fff'">{{index+1}}</span>
                     </van-button>
                 </template>
@@ -49,6 +54,7 @@ export default {
 </script>
 <style lang="scss">
 	.about-container {
+        height: 100%;
 		.warpper {
 		}
 	}

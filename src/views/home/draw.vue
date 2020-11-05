@@ -3,7 +3,10 @@
 	<div class="about-container">
 		<div class="warpper">
             <!-- :label="'第'+item.gameNumber+'期'" -->
-            <van-cell is-link v-for="(item,index) in drawList" :key="index" :icon="item.imgPath" size="large">
+            <van-cell v-for="(item,index) in drawList" :key="index"  size="large" clickable>
+                <template #icon >
+                    <van-image style="margin-right:10px;margin-top:12px;" width="40" height="40" round lazy-load :src="item.imgPath" />
+                </template>
                 <template #title >
                     <span class="custom-title" >{{item.gameName}}</span>
                 </template>
@@ -12,6 +15,9 @@
                     <div class="custom-label" >
                         <span class="k3" v-for="(number,key) in item.gameOpenNo" :key="key">{{number}}</span>
                     </div>
+                </template>
+                <template #right-icon>
+                    <van-icon style="margin-top:15px;" name="arrow" size="30" color="#999" />
                 </template>
             </van-cell>
         </div>
@@ -67,7 +73,7 @@ export default {
         display: inline-block;
         width: 20px;
         height: 20px;
-        margin-left: 5px;
+        margin-right: 5px;
         background-color: red;
         color: #fff;
         text-align: center;
