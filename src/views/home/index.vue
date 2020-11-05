@@ -66,6 +66,7 @@ export default {
                         newList.push(data.list[i].gameSetting[a])
                     }
                 }
+
                 // eslint-disable-next-line eqeqeq
                 this.lotteryList = newList.filter(item => item.recommend == 1)
                 localStorage.setItem('newList', JSON.stringify(newList))
