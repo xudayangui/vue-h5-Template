@@ -2,25 +2,23 @@
 <template>
 	<div class="index-container">
         <div class="warpper">
-            <div>
-                <van-swipe class="my-swipe" :autoplay="3000" indicator-color="white">
+            <div class="my-swipe">
+                <van-swipe :autoplay="3000" indicator-color="white" :lazy-render="true">
                     <van-swipe-item v-for="(item, index) in bannerList" :key="index">
                         <img v-lazy="item.imgPath"/>
                     </van-swipe-item>
                 </van-swipe>
             </div>
-            <div>
+            <div class="my-notice">
                 <van-notice-bar background="#fff" color="black" left-icon="volume-o" :text="notice"/>
             </div>
-            <div>
+            <div class="my-grid">
                 <van-grid :column-num="5" square clickable>
                     <van-grid-item v-for="(item,index) in gridList" :key="index" :icon="item.img" :text="item.text"/>
                 </van-grid>
             </div>
-            <div >
+           <div class="my-contain">
                 <van-cell title="热门彩票" is-link to="/lottreyAll" value="全部" />
-            </div>
-            <div>
                 <van-grid :column-num="3" square clickable :border="false" icon-size="70px">
                     <van-grid-item v-for="(item,index) in lotteryList" :key="index" :icon="item.imgPath" :text="item.gameName" />
                 </van-grid>
@@ -102,11 +100,11 @@ export default {
 }
 .warpper {
 		width: 100%;
-	}
+}
 .my-swipe {
-	margin: 5px;
 	border-radius: 5px;
-	height: 150px;
+    height: 150px;
+    overflow: hidden;
 }
 .my-swipe .van-swipe-item {
   color: #fff;
@@ -115,7 +113,26 @@ export default {
   width: 100%;
 }
 .my-swipe .van-swipe-item img{
- width: 100%;
- height: 100%;
+ width: 99.8%;
+ height: 150px;
+}
+.my-grid {
+    margin-top: 2%;
+    background: #fff;
+    border-radius: 5px;
+    .van-hairline--top{
+        overflow: hidden;
+    }
+}
+.my-notice {
+    margin-top: 2%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.my-contain {
+    margin-top: 2%;
+    background: #fff;
+    border-radius: 5px;
+    overflow: hidden;
 }
 </style>

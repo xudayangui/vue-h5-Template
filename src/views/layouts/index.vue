@@ -75,9 +75,12 @@ export default {
 }
 </script>
 <style scoped>
+.app-container {
+    background: #efeef4;
+}
 .layout-content {
+    width: 97%;
+    margin: 55px auto 55px auto;
     height: 100%;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 </style>
