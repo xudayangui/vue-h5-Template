@@ -12,13 +12,25 @@
                 </template>
                 <template #label >
                     <div class="custom-label" >{{'第'+item.gameNumber+'期'}}</div>
-                    <div class="custom-label" >
-                        <span class="k3" v-for="(number,key) in item.gameOpenNo" :key="key">{{number}}</span>
+                    <div class="custom-label" v-show="item.gameType==11 || item.gameType==22 || item.gameType==44" >
+                        <span v-for="(number,index) in item.gameOpenNo" :key="`A${index}${Date.now}`">
+                            {{number}}
+                        </span>
+                    </div>
+                     <div class="custom-label lhc" v-show="item.gameType==66">
+                        <span v-for="(number,index) in item.gameOpenNo" :key="`B${index}${Date.now}`">
+                            {{number}}
+                        </span>
+                    </div>
+                    <div  class="custom-label" v-show="item.gameType==55">
+                        <span :style="'background-color:'+pk10Colors[+number]" v-for="(number,index) in item.gameOpenNo" :key="`c${index}${Date.now}`">
+                            {{number}}
+                        </span>
                     </div>
                 </template>
-                <template #right-icon>
+                <!-- <template #right-icon>
                     <van-icon style="margin-top:15px;" name="arrow" size="30" color="#999" />
-                </template>
+                </template> -->
             </van-cell>
         </div>
 	</div>
@@ -31,7 +43,8 @@ import { getGameLatestOpenNos } from '@/api/lottrey.js'
 export default {
   data() {
     return {
-        drawList: []
+        drawList: [],
+        pk10Colors: ['', '#edc026', '#2895d9', '#004279', '#e27b26', '#23b2b0', '#6265c2', '#a2a2a2', '#cb383a', '#5c110e', '#3b924f']
     }
   },
   created() {
@@ -46,8 +59,7 @@ export default {
 			getGameLatestOpenNos(params).then((data) => {
                 this.drawList = data.list
                 this.drawList.forEach(item => {
-                    // eslint-disable-next-line no-return-assign
-                    return item.gameOpenNo = item.gameOpenNo.split(',')
+                     item.gameOpenNo = item.gameOpenNo.replace('+', ',').split(',')
                 })
 			}).catch((e) => {
 			})
@@ -58,6 +70,8 @@ export default {
 </script>
 <style lang="scss">
 	.draw-container {
+        border-radius: 5px;
+        overflow: hidden;
 		.warpper {
             width: 100%;
             .van-cell {
@@ -69,7 +83,7 @@ export default {
             }
 		}
     }
-    .k3 {
+    .custom-label span {
         display: inline-block;
         width: 20px;
         height: 20px;
@@ -79,5 +93,6 @@ export default {
         text-align: center;
         line-height: 20px;
         border-radius: 50%;
+        font-size: 12px;
     }
 </style>
