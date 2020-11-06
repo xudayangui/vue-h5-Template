@@ -80,7 +80,7 @@ export default {
 }
 .layout-content {
     width: 97%;
-    margin: 55px auto 55px auto;
+    margin: 50px auto 55px auto;
     height: 100%;
 }
 </style>

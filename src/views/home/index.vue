@@ -19,7 +19,7 @@
             </div>
            <div class="my-contain">
                 <van-cell title="热门彩票" is-link to="/lottreyAll" value="全部" />
-                <van-grid :column-num="3" square clickable :border="false" icon-size="70px">
+                <van-grid :column-num="4" square clickable :border="false" icon-size="60px">
                     <van-grid-item v-for="(item,index) in lotteryList" :key="index" :icon="item.imgPath" :text="item.gameName" />
                 </van-grid>
             </div>
@@ -117,20 +117,18 @@ export default {
  height: 150px;
 }
 .my-grid {
-    margin-top: 2%;
+    margin-top: 1%;
     background: #fff;
     border-radius: 5px;
-    .van-hairline--top{
-        overflow: hidden;
-    }
+    overflow: hidden;
 }
 .my-notice {
-    margin-top: 2%;
+    margin-top: 1%;
     overflow: hidden;
     border-radius: 5px;
 }
 .my-contain {
-    margin-top: 2%;
+    margin-top: 1%;
     background: #fff;
     border-radius: 5px;
     overflow: hidden;
