@@ -37,14 +37,6 @@ export function getBannerConfig(data) {
         hideloading: true // 隐藏 loading 组件
     })
 }
-// 活动
-export function getWebActivity(data) {
-    return request({
-        url: api.GetWebActivity,
-        method: 'get',
-        data
-    })
-}
 // 排行榜
 export function getBetRank(data) {
     return request({

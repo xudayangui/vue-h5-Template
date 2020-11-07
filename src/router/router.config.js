@@ -56,5 +56,10 @@ export const constantRouterMap = [
         path: '/lottreyAll',
         name: 'LottreyAll',
         component: () => import('@/views/lottreyAll/index')
+    },
+    {
+        path: '/excitingDetails',
+        name: 'ExcitingDetails',
+        component: () => import('@/views/excitingDetails/index')
     }
 ]

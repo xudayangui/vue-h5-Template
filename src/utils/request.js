@@ -7,7 +7,7 @@ import { baseApi } from '@/config'
 const service = axios.create({
     baseURL: baseApi, // url = base api url + request url
     headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json; charset=utf8',
         'service': 1
     },
     withCredentials: true, // 跨域请求时发送Cookie

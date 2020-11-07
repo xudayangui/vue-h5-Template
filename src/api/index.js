@@ -7,6 +7,7 @@ const api = {
   GetNotice: '/getNotice',
   GetBannerConfig: '/getBannerConfig',
   GetWebActivity: '/webactivity/getWebActivity?f=1',
+  GetWebActivityById: '/webactivity/getWebActivityById',
   GetBetRank: '/getBetRank'
 }
 export default api
