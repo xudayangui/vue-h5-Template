@@ -9,7 +9,7 @@
              <template v-slot:loading>
                 <van-loading type="spinner" size="20" />
             </template>
-            <van-image/>
+            </van-image>
         </div>
 	</div>
 </template>

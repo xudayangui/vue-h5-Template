@@ -12,11 +12,6 @@
             <div class="my-notice">
                 <van-notice-bar background="#fff" color="black" left-icon="volume-o" :text="notice"/>
             </div>
-            <div class="my-grid">
-                <van-grid :column-num="5" square clickable>
-                    <van-grid-item v-for="(item,index) in gridList" :key="index" :icon="item.img" :text="item.text"/>
-                </van-grid>
-            </div>
            <div class="my-contain">
                 <van-cell title="热门彩票" is-link to="/lottreyAll" value="全部" />
                 <van-grid :column-num="4" square clickable :border="false" icon-size="60px">
@@ -32,13 +27,6 @@ import { getGameTypeAll, getNotice, getBannerConfig } from '@/api/lottrey.js'
 export default {
 	data() {
 		return {
-			gridList: [
-				{ 'img': require('./../../assets/images/qipai.png'), 'text': '棋牌' },
-				{ 'img': require('./../../assets/images/dizi.png'), 'text': '电子' },
-				{ 'img': require('./../../assets/images/dianjing.png'), 'text': '电竞' },
-				{ 'img': require('./../../assets/images/zhenren.png'), 'text': '真人' },
-				{ 'img': require('./../../assets/images/tiyu.png'), 'text': '体育' }
-			],
             lotteryList: [],
             bannerList: [],
             notice: null
