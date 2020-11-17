@@ -47,7 +47,7 @@ module.exports = {
 		curly: [2, 'multi-line'],
 		'dot-location': [2, 'property'],
 		'eol-last': 2,
-		eqeqeq: ['error', 'always', { null: 'ignore' }],
+		// eqeqeq: ['error', 'always', { null: 'ignore' }],
 		'generator-star-spacing': [
 			2,
 			{
@@ -92,8 +92,8 @@ module.exports = {
 		'no-dupe-class-members': 2,
 		'no-dupe-keys': 2,
 		'no-duplicate-case': 2,
-		'no-empty-character-class': 2,
-		'no-empty-pattern': 2,
+		// 'no-empty-character-class': 2,
+		// 'no-empty-pattern': 2,
 		'no-eval': 2,
 		'no-ex-assign': 2,
 		'no-extend-native': 2,
@@ -139,7 +139,7 @@ module.exports = {
 		'no-proto': 2,
 		'no-redeclare': 2,
 		'no-regex-spaces': 2,
-		'no-return-assign': [2, 'except-parens'],
+		// 'no-return-assign': [2, 'except-parens'],
 		'no-self-assign': 2,
 		'no-self-compare': 2,
 		'no-sequences': 2,
@@ -149,8 +149,8 @@ module.exports = {
 		'no-this-before-super': 2,
 		'no-throw-literal': 2,
 		'no-trailing-spaces': 2,
-		'no-undef': 2,
-		'no-undef-init': 2,
+		// 'no-undef': 2,
+		// 'no-undef-init': 2,
 		'no-unexpected-multiline': 2,
 		'no-unmodified-loop-condition': 2,
 		'no-unneeded-ternary': [
@@ -161,13 +161,13 @@ module.exports = {
 		],
 		'no-unreachable': 2,
 		'no-unsafe-finally': 2,
-		'no-unused-vars': [
-			2,
-			{
-				vars: 'all',
-				args: 'none'
-			}
-		],
+		// 'no-unused-vars': [
+		// 	2,
+		// 	{
+		// 		vars: 'all',
+		// 		args: 'none'
+		// 	}
+		// ],
 		'no-useless-call': 2,
 		'no-useless-computed-key': 2,
 		'no-useless-constructor': 2,
