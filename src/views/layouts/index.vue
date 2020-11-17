@@ -32,7 +32,7 @@ export default {
                 {
                     title: '收藏',
                     to: {
-                        name: 'Draw'
+                        name: 'Favorites'
                     },
                     icon: 'kaijiang',
                     font: 'iconfont'
@@ -40,7 +40,7 @@ export default {
                 {
                     title: '通讯录',
                     to: {
-                        name: 'Exciting'
+                        name: 'AddressBook'
                     },
                     icon: 'star',
                     font: ''

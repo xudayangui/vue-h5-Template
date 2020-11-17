@@ -16,15 +16,15 @@ export const constantRouterMap = [
 				meta: { title: '首页', keepAlive: false }
 			},
 			{
-				path: '/draw',
-				name: 'Draw',
-				component: () => import('@/views/home/draw'),
+				path: '/favorites',
+				name: 'Favorites',
+				component: () => import('@/views/home/favorites'),
 				meta: { title: '收藏', keepAlive: false }
 			},
 			{
-				path: '/exciting',
-				name: 'Exciting',
-				component: () => import('@/views/home/exciting'),
+				path: '/addressBook',
+				name: 'AddressBook',
+				component: () => import('@/views/home/addressBook'),
 				meta: { title: '通讯录', keepAlive: false }
 			},
 			{
