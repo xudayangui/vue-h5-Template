@@ -26,7 +26,7 @@ module.exports = {
 		},
 		proxy: {
 			'/': {
-				target: 'https://www-48438.com',
+				target: '',
 				// ws:true,
 				changOrigin: true,
 				pathRewrite: {

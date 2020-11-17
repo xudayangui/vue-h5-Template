@@ -7,33 +7,6 @@ body .app {
   font-family: Arial, Helvetica, 'STHeiti STXihei', 'Microsoft YaHei', Tohoma, sans-serif;
   background-color: $background-color;
 }
-.my-icon {
-    // position: relative !important;
-    // font: 0.37333rem/1 "my-icon" !important;
-    // font-size: inherit !important;
-    // text-rendering: auto !important;
-    // -webkit-font-smoothing: antialiased !important;
-  }
-.app-container {
-//   margin-bottom: 60px;
-//   display: flex;
-//   flex-direction: column;
-//   height: 100%;
-}
-.layout-header{
-    // z-index: 9999;
-    // position:absolute;  top:0;
-}
-.layout-content {
-    // margin-bottom: 60px;
-    // position:absolute; bottom:60px; top: 60px
-}
-.layout-footer {
-    // z-index: 9999;
-    // height: 60px;
-    // position:absolute;   bottom:0;
-}
-
 .van-nav-bar{
   background-color:#dc3b40;
  }

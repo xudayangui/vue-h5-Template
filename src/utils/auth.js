@@ -1,8 +1,7 @@
-const TokenKey = 'lenhahahahahahaha'
+const TokenKey = 'token'
 
 export function getToken() {
-    return 'lenhahahahahahaha'
-	// return sessionStorage.getItem(TokenKey)
+	return sessionStorage.getItem(TokenKey)
 }
 
 export function setToken(token) {

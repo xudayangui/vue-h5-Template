@@ -30,7 +30,7 @@ export default {
                     font: 'iconfont'
                 },
                 {
-                    title: '开奖',
+                    title: '收藏',
                     to: {
                         name: 'Draw'
                     },
@@ -38,7 +38,7 @@ export default {
                     font: 'iconfont'
                 },
                 {
-                    title: '活动',
+                    title: '通讯录',
                     to: {
                         name: 'Exciting'
                     },
@@ -46,7 +46,7 @@ export default {
                     font: ''
                 },
                 {
-                    title: '金榜',
+                    title: '发现',
                     to: {
                         name: 'Find'
                     },

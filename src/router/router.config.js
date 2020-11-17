@@ -19,19 +19,19 @@ export const constantRouterMap = [
 				path: '/draw',
 				name: 'Draw',
 				component: () => import('@/views/home/draw'),
-				meta: { title: '开奖', keepAlive: false }
+				meta: { title: '收藏', keepAlive: false }
 			},
 			{
 				path: '/exciting',
 				name: 'Exciting',
 				component: () => import('@/views/home/exciting'),
-				meta: { title: '活动', keepAlive: false }
+				meta: { title: '通讯录', keepAlive: false }
 			},
 			{
 				path: '/find',
 				name: 'Find',
 				component: () => import('@/views/home/find'),
-				meta: { title: '金榜', keepAlive: false }
+				meta: { title: '发现', keepAlive: false }
 			},
 			{
 				path: '/about',
@@ -51,15 +51,5 @@ export const constantRouterMap = [
 		path: '/registered',
 		name: 'Registered',
 		component: () => import('@/views/layouts/registered')
-    },
-    {
-        path: '/lottreyAll',
-        name: 'LottreyAll',
-        component: () => import('@/views/lottreyAll/index')
-    },
-    {
-        path: '/excitingDetails',
-        name: 'ExcitingDetails',
-        component: () => import('@/views/excitingDetails/index')
     }
 ]

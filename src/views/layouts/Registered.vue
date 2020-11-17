@@ -1,102 +1,14 @@
 <template>
-	<div class="warpper">
-		<!-- 导航栏 -->
-        <div>
-            <van-nav-bar  style="background-color: #dc3b40;">
-                <template #left>
-                    <span style="color: white;" @click="$router.push('/home')">首页</span>
-                </template>
-                <template #title>
-                    <span style="color: white;">注册</span>
-                </template>
-                <template #right>
-                    <span style="color: white;" @click="$router.push('/login')">登录</span>
-                </template>
-            </van-nav-bar>
-        </div>
-        <div>
-		<!-- 表单 -->
-            <van-form>
-                <van-field  type="text" v-model="userName" name="账号" label="账号"  placeholder="账号为6-12位数字或英文字母" clearable :rules="[{ required: true, message: '请输入账号' }]"/>
-                <van-field type="password" v-model="passWord"  name="密码" label="密码"  placeholder="密码为6-12位数字或英文字母" clearable :rules="[{ required: true, message: '请输入密码' },{pattern: /^\w{6,}$/,message:'密码为6-12位数字或英文字母'}]"></van-field>
-                <van-field type="password" v-model="passWord"  name="请输入确认密码" label="确认密码"  placeholder="密码" clearable :rules="[{ required: true, message: '请输入确认密码' },{pattern: /^\w{6,}$/,message:'密码为6-12位数字或英文字母'}]"></van-field>
-                <van-field  type="text" v-model="userName" name="姓名" label="姓名"  placeholder="真实姓名" clearable :rules="[{ required: true, message: '请输入姓名' }]"/>
-                <van-field  type="tel" v-model="userName" name="手机号" label="手机号"  placeholder="手机号为11位数字" clearable :rules="[{ required: true, message: '请输入手机号' }]"/>
-                <van-field  type="digit" v-model="userName" name="邀请码" label="邀请码"  placeholder="邀请码4位数字" clearable :rules="[{ required: true, message: '请输入邀请码' }]"/>
-                <van-field class="verCode" type="digit" v-model="verifyCode"  name="验证码" label="请输入验证码"  placeholder="验证码" :rules="[{ required: true, message: '请输入验证码' }]">
-                    <div slot="button" >
-                        <img :src="catCh"  @click="getVerCode">
-                    </div>
-                </van-field>
-                <div style="margin: 16px;">
-                    <van-button @click="onSubmit" color="#dc3b40" round block type="info" native-type="submit"> 立即注册</van-button>
-                </div>
-            </van-form>
-        </div>
-	</div>
+	<div class="warpper"></div>
 </template>
 <script>
 	export default {
 		data() {
 			return {
-				userName: null,
-				passWord: null,
-                verifyCode: null,
-                catCh: `/getVerCode?w=100&h=35&t=` + Date.now()
 			}
 		},
 		methods: {
-			clearPassWord(value) {
-				if (value == 'passWord') { //eslint-disable-line
-					this.passWord = null
-				} else {
-					this.userName = null
-				}
-            },
-            getVerCode() {
-                this.catCh = `/getVerCode?w=100&h=35&t=` + Date.now()
-            },
-			onSubmit() { // 点击登录
-				// 获取数据
-				let users = localStorage.users
-				if (users) {
-					users = JSON.parse(users)
-					let isLogin = false
-					users.map(item => {
-						if (item.username == this.username && item.password == this.password) {//eslint-disable-line
-							isLogin = true
-							return
-						}
-					})
-
-					if (isLogin) {
-						sessionStorage.user = this.username
-						this.$router.push({
-							path: '/user'
-						})
-					} else {
-						this.$notify({ type: 'danger', message: '输入的账号或密码有误' })
-					}
-				} else {
-					this.$notify({ type: 'danger', message: '该用户不存在' })
-				}
-			},
-			back() { // 返回我的页面
-				this.$router.push({
-					path: '/user'
-				})
-			}
 		}
 
 	}
 </script>
-<style lang="scss" scoped>
-    .verCode div{
-        img {
-            margin-top: -20px;
-            height: 50px;
-            width: 90px;
-        }
-       height: 10px;
-    }
-</style>
