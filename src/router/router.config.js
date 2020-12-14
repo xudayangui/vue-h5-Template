@@ -45,12 +45,12 @@ export const constantRouterMap = [
     {
 		path: '/login',
 		name: 'Login',
-		component: () => import('@/views/layouts/login')
+		component: () => import('@/views/layouts/Login')
 	},
 	{
 		path: '/registered',
 		name: 'Registered',
-		component: () => import('@/views/layouts/registered')
+		component: () => import('@/views/layouts/Registered')
     },
     {
         path: '/lottreyAll',
